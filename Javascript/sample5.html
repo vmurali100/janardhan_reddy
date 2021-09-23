@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        // This three type required to be defined and Called
+        function helloWorld(){ console.log("Hello world from Type1")}
+        var helloWorld1 = function (){console.log("Hello World from Type 2")}
+        var greetings = function someGreeings(){console.log("Hello World from Type 3")};
+
+        var someFunc = ()=>{} // Arrow function or fat Arrow function
+            /*helloWorld()
+            helloWorld1()
+            greetings()*/ 
+
+           // Self Invoking Function 
+           (function () {
+            document.getElementById("demo").innerHTML = "Hello! I called myself";
+          })();
+           (function(){
+            console.log("Look, this article is on self-invoking functions");
+            })();
+
+           (function() {
+            // body of the function
+            })();
+
+
+
+    </script>
+</body>
+</html>
