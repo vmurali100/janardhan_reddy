@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="fName">First Name</label>
+      <input type="text" id="fName" onkeyup="validate()"/><br />
+      <label for="lName">Last Name</label>
+      <input type="text" id="lName" onkeyup="validate()"/><br />
+      <label for="email">Email</label>
+      <input type="email" id="email" onkeyup="validate()"/><br />
+      <label for="dob">Date Of Birth</label>
+      <input type="date" id="dob" onchange="validate()" /> <br />
+      <label for="subjects">Subjects</label>
+      <input type="checkbox" name="subject" value="HTML" onchange="validate()" />HTML
+      <input type="checkbox" name="subject" value="CSS" onchange="validate()" />CSS
+      <input type="checkbox" name="subject" value="JS" onchange="validate()" />JS
+      <input type="checkbox" name="subject" value="ReactJS" onchange="validate()" />ReactJS <br />
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" value="Male" onchange="validate()" /> MALE
+      <input type="radio" name="gender"  value="Female" onchange="validate()" /> FEMALE <br />
+      <button
+        type="button"
+        style=""
+        class="a"
+        onclick="createUser()"
+        id="create"
+        disabled
+      >
+        submit
+      </button>
+      <button
+        style="display: none"
+        id="update"
+        type="button"
+        onclick="updateUser()"
+      >
+        Update
+      </button>
+    </form>
+    <hr />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>DOB</th>
+          <th>Subjects</th>
+          <th>Gender</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="./create.js"></script>
+    <script src="./read.js"></script>
+    <script src="./update.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./validate.js"></script>
+  </body>
+</html>

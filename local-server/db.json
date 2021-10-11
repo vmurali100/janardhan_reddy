@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "fName": "Murali Krishna",
+      "lName": "Veesambattu",
+      "email": "vmurali100@gmail.com",
+      "dob": "10/3/2021",
+      "subjects": [
+        "CSS"
+      ],
+      "gender": "Female",
+      "id": 1
+    },
+    {
+      "fName": "Lokesh",
+      "lName": "Kumar",
+      "email": "lokesh@gmail.com",
+      "dob": "10/12/2021",
+      "subjects": [
+        "CSS"
+      ],
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "fName": "Harish",
+      "lName": "Kumar",
+      "email": "harish@gmail.com",
+      "dob": "10/19/2021",
+      "subjects": [
+        "HTML"
+      ],
+      "gender": "Female",
+      "id": 3
+    }
+  ]
+}
