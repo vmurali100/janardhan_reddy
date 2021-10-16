@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>DOB</th>
+          <th>Subjects</th>
+          <th>Gender</th>
+          <th>Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var users = [];
+      function getAllUsersFromServer() {
+        return new Promise(function (success, failure) {
+          var postData = new XMLHttpRequest();
+          postData.onreadystatechange = function () {
+            if (postData.readyState == 4 && postData.status == 200) {
+              users = JSON.parse(postData.response);
+              console.log(users);
+              success(users)
+            // failure("Some thing went Wrong")
+            }
+          };
+          postData.open("GET", "http://localhost:3000/users");
+          postData.send();
+        });
+      }
+
+      function displayUsers() {
+        document.querySelector("tbody").innerHTML = "";
+        users.forEach(function (user, i) {
+          var myTr = document.createElement("tr");
+          for (a in user) {
+            var td = document.createElement("td");
+            td.innerHTML = user[a];
+            myTr.appendChild(td);
+          }
+          var td4 = document.createElement("td");
+          var editBtn = document.createElement("button");
+          editBtn.innerHTML = "EDIT";
+          editBtn.setAttribute("onclick", "editUser(" + i + ")");
+          td4.appendChild(editBtn);
+          var td5 = document.createElement("td");
+          var deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          deleteBtn.innerHTML = "DELETE";
+          td5.appendChild(deleteBtn);
+
+          myTr.appendChild(td4);
+          myTr.appendChild(td5);
+
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+
+     // async indidates that , this function is going to handle Aynchronos Behavior
+      async function getAndDisplay(){
+        users = await getAllUsersFromServer() // Await Indicates , it has to wait until , get the data
+        displayUsers()
+      }
+
+    //   getAllUsersFromServer()
+    //     .then(function (users){
+    //         displayUsers(users)
+    //     })
+    //     .catch(function (err){
+    //         console.log(" I am in Catch Block : -",err)
+    //     })
+    
+
+      getAndDisplay()
+    </script>
+  </body>
+</html>

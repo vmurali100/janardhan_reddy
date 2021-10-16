@@ -21,17 +21,6 @@
       ],
       "gender": "Male",
       "id": 2
-    },
-    {
-      "fName": "Harish",
-      "lName": "Kumar",
-      "email": "harish@gmail.com",
-      "dob": "10/19/2021",
-      "subjects": [
-        "HTML"
-      ],
-      "gender": "Female",
-      "id": 3
     }
   ]
 }

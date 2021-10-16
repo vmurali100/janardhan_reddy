@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function getDataFromServer (){
+            var response = await fetch("http://localhost:3000/users")
+            var details = await response.json()
+            console.log(details)
+            // fetch("http://localhost:3000/users")
+            // .then(function (res){
+            //     return res.json()
+            // }).then(function (response){
+            //     console.log(response)
+            // })
+        }
+
+        function displayUsers(){
+
+        }
+
+        getDataFromServer ()
+    </script>
+</body>
+</html>

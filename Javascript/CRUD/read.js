@@ -63,4 +63,4 @@ function getDataFromServer(){
     postData.send()
 }
 
-getDataFromServer()
+// getDataFromServer()

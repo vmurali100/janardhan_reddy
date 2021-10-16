@@ -12,6 +12,7 @@ function createUser (){
     // localStorage.setItem("localUsers",JSON.stringify(users))
 }
 
+
 function postDataToServer(user){
     var postData = new XMLHttpRequest()
     postData.onreadystatechange=function(){
