@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   <div style="text-align: center;">
+    <h2></h2>
+
+    <button onclick="showTime()">Start Time</button>
+    <button onclick="stopTime()">Stop Time</button>
+   </div>
+    <script>
+      var myTime;
+
+      function showTime() {
+        document.querySelector("h2").style.color="black"
+        document.querySelector("h2").style.background="none"
+
+        myTime = setInterval(() => {
+          var todaysDate = new Date();
+          document.querySelector("h2").innerHTML =
+            "Time : " + todaysDate.toLocaleTimeString();
+        }, 1000);
+      }
+
+      function stopTime() {
+            document.querySelector("h2").style.background="red"
+            document.querySelector("h2").style.color="white"
+          clearInterval(myTime)
+      }
+
+      showTime()
+
+      document.querySelector("h2").onmouseover=function (){
+          stopTime()
+          
+          
+      }
+
+      document.querySelector("h2").onmouseout=function (){
+
+        showTime()
+      }
+    </script>
+  </body>
+</html>

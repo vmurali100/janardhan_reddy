@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <button onclick="addUser()">
+   Add Users
+ </button>
+ <button onclick="removeUser()">Remove User</button>
+<hr>
+<div id="demo"></div>
+<script>
+  var users = ["Janardhan","Murali","Ram"]
+
+  function addUser(){
+    users.push("Ravi")
+    document.getElementById("demo").innerHTML = users
+  }
+
+  function removeUser(){
+    users.pop()
+    document.getElementById("demo").innerHTML = users
+
+  }
+</script>
+
+</body>
+</html>
+
+

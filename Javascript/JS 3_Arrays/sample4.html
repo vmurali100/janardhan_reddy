@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var users = ["Murali","Krishna","Janardan","Ram","Sam","Bob"]
+
+        //displaying Values in an Array 
+
+       /* for(i=0;i<users.length;i++){
+            document.write(users[i]+"<br/>")
+        }*/
+
+        // users.push("Jagan") // Push method will add value to the end of the Array
+        //users.unshift("Reddy") // Unshift method will add a value to the Starting of an Array
+        //users.splice(2,0,"VMR") // Splice method will add a value to the Specified Index
+      
+        //users.pop() // POP method will remove a value at the end of the Array
+       // users.shift() // Shift will remove the value at the Beginning of the Array
+       //users.splice(2,1)
+
+      /* let myUser = users.find(function (user){
+           return user.length ==3 // find will returned one matched Value
+       })*/
+
+      /* let myUsers = users.filter(function (user){
+        return user.length ==3 // filter method will return matched all values
+       })
+
+       console.log(myUsers)
+        */
+       /*let check= users.every(function (user){
+            return user.length >=3 // every will return true if all matches the condition
+        })*/
+
+        let check = users.some(function (user){
+            return user.length==8 // Some will return true if any one value match the condition
+        })
+
+        console.log(check)
+
+        let newUsers = users.map(function (user){
+            return user+"- AP"
+        })
+        newUsers.forEach(function (usr){
+            document.write(usr+"<br>")
+        }) 
+
+       // document.write(users[1])
+        
+    </script>
+</body>
+</html>
